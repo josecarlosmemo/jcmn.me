@@ -1,8 +1,8 @@
 {
-  "name": "josecarlosmemo.github.io",
+  "name": "jcmn.me",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://josecarlosmemo.github.io/",
+  "homepage": "https://jcmn.me/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
