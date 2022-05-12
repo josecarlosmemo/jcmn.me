@@ -1,0 +1,87 @@
+$primary-color: #ff79c6;
+
+@import "animate.css";
+
+@font-face {
+  font-family: "MesloLGS NF";
+  src: url("./assets/fonts/MesloLGS\ NF\ Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MesloLGS NF";
+  src: url("./assets/fonts/MesloLGS\ NF\ Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "MesloLGS NF";
+  src: url("./assets/fonts/MesloLGS\ NF\ Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MesloLGS NF";
+  src: url("./assets/fonts/MesloLGS\ NF\ Bold\ Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Futura
+@font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura\ Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura\ Medium\ Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura\ Light.ttf") format("truetype");
+    font-weight: 300 ;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura\ Light\ Italic.ttf") format("truetype");
+    font-weight: 300 ;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura\ Heavy.ttf") format("truetype");
+    font-weight: 900 ;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura\ Heavy\ Italic.ttf") format("truetype");
+    font-weight: 900 ;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura\ Bold.ttf") format("truetype");
+    font-weight: 700 ;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura\ Bold\ Italic.ttf") format("truetype");
+    font-weight: 700 ;
+    font-style: italic;
+  }
