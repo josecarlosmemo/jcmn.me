@@ -1,20 +1,27 @@
 html {
   font-size: 62.5%;
+  min-width: 320px;
 }
 
 body {
   margin: 0;
-  font: 300 11px/1.4 "Futura", "sans-serif";
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 200;
+  font-family: "Futura", sans-serif;
   color: #6272a4;
   background-color: #282a36;
-  overflow: hidden;
+  padding-left: 1rem;
+  min-width: 320px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: block;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
-@media (max-width: 750px) {
+/* @media (max-width: 750px) {
   h1 {
     font-size: 47px !important;
     line-height: 40px !important;
   }
-}
+} */

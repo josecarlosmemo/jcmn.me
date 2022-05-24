@@ -1,38 +1,62 @@
 .logo-container {
-    z-index: 0;
-    width:550px;
-    height:550px;
-    position: absolute;
-    top: 0;
-    right: 15%;
+  z-index: -1;
+  width: 550px;
+  height: 550px;
+  position: absolute;
+  top: 0;
+  right: 15%;
+  bottom: 0;
+  left: auto;
+  margin: auto;
+  opacity: 0;
+
+  svg {
+    width: 100%;
+    height: auto;
     bottom: 0;
-    left: auto;
+  }
+
+  .solid-logo {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: 0;
     margin: auto;
-    opacity:0;
-
-    svg {
-        width: 100%;
-        height: auto;
-        bottom: 0;
-    }
-
-    .solid-logo {
-        position: absolute;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: 0;
-        margin: auto;
-        width: 100%;
-        opacity: 0;
-        z-index: 1;
-    }
-
-
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+  }
 }
 
 .svg-container {
-    stroke: #ff79c6;
-    stroke-width: 5px;
-    filter: drop-shadow(0px 0px 10px #ff79c6);
+  stroke: #ff79c6;
+  stroke-width: 5px;
+  filter: drop-shadow(0px 0px 10px #ff79c6);
 }
+
+@media (max-width: 960px) {
+  .logo-container {
+    width: 50%;
+    height: 400px;
+    right: 0;
+    left: 0;
+  }
+}
+
+
+
+// @media (max-width: 800px) {
+//   .logo-container {
+//     width: 500px;
+//     height: 500px;
+//   }
+// }
+
+// @media (max-width: 600px) {
+//   .logo-container {
+//     width: 400px;
+//     height: 400px;
+//   }
+// }
+

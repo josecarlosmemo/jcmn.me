@@ -49,7 +49,6 @@ function AnimatedLogo() {
       },
       5500
     );
-    console.log(timeline.duration);
   }, []);
 
   return (

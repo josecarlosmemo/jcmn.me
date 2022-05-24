@@ -13,7 +13,7 @@ function Home() {
           <AnimatedLetters str={"I'm "} idx={15} />
           <AnimatedLetters str="José Carlos" idx={20} />
         </h1>
-        <h2>Software Developer / Designer</h2>
+        <p>Software Developer / Designer</p>
         <Link className="flat-button" to="/contact">
           Contact Me
         </Link>
@@ -21,6 +21,7 @@ function Home() {
           Resume
         </Link>
       </div>
+
       <AnimatedLogo />
     </div>
   );

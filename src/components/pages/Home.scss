@@ -7,45 +7,8 @@
     width: 40%;
     max-height: 90%;
   }
-  h1 {
-    color: #f8f8f2;
-    font-size: 54px;
-    margin: 0;
-    // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 800;
-
-    &:before {
-      content: "<h1>";
-      font-family: "MesloLGS NF";
-      color: #ff79c6;
-      font-size: 18px;
-      position: absolute;
-      margin-top: -40px;
-      left: -15px;
-      opacity: 0.6;
-    }
-
-    &:after {
-      content: "<h1/>";
-      font-family: "MesloLGS NF";
-      color: #ff79c6;
-      font-size: 18px;
-      position: absolute;
-      margin-top: 18px;
-      margin-left: 20px;
-      animation: fadeIn 1s 1.7s backwards;
-      opacity: 0.6;
-    }
-  }
-  h2 {
-    color: #f1fa8c;
-    margin-top: 20px;
-    font-weight: 400;
-    font-size: 11px;
-    font-family: "Futura";
-    letter-spacing: 3px;
-    animation: fadeIn 1s 1.8s backwards;
-  }
+  
+ 
   .flat-button {
     color: #8be9fd;
     font-size: 13px;
@@ -68,7 +31,7 @@
 }
 
 
-@media (max-width: 530px) {
+@media screen and (max-width: 900px) {
   .home-page {
     .text-zone {
       width: 85%;
@@ -76,3 +39,8 @@
     }
   }
 }
+
+
+
+
+
