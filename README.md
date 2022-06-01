@@ -4,6 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![Website][website-status-shield]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -61,3 +62,4 @@ Don't forget to give the project a star! Thanks again!
 [stars-url]: https://github.com/josecarlosmemo/jcmn.me/stargazers
 [issues-shield]: https://img.shields.io/github/issues/josecarlosmemo/jcmn.me.svg?style=for-the-badge
 [issues-url]: https://github.com/josecarlosmemo/jcmn.me/issues
+[website-status-shield]: https://img.shields.io/website-up-down-green-red/http/jcmn.me.svg?style=for-the-badge
