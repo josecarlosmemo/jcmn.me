@@ -4,13 +4,13 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![Website][website-status-shield]](jcmn.me)
+[![Website][website-status-shield]](https://jcmn.me)
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/josecarlosmemo/jcmn.me">
-    <img src="./images/jcmn_pink-logo.png" alt="Logo" width="80" height="80">
+    <img src="./public/assets/images/logo-pink.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">JCMN | Website & Portfolio</h3>
