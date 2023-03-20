@@ -20,10 +20,9 @@ function Skills({}: Props) {
       </h3>
 
       <TagCloud
-        className="text-dracula text-sm"
+        className="text-dracula text-sm pt-24 md:pt-0"
         options={(w: Window & typeof globalThis): TagCloudOptions => ({
           radius: Math.min(500, w.innerWidth, w.innerHeight) / 2,
-          maxSpeed: "fast",
         })}
       >
         {[
