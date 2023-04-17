@@ -32,7 +32,9 @@ function ProjectCard({ project }: Props) {
       </motion.div>
 
       <div className="max-w-6xl px-0 space-y-2 md:px-10">
-        <h4 className="text-4xl font-semibold text-center">{project.title}</h4>
+        <h4 className="text-3xl font-semibold text-center md:text-4xl">
+          {project.title}
+        </h4>
         <motion.div
           className="flex flex-wrap items-center justify-center py-1 space-x-2"
           initial={{ opacity: 0 }}
