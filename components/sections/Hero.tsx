@@ -1,10 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "../BackgroundCircles";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import AnimatedLogo from "../AnimatedLogo";
-import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 
 type Props = {
@@ -19,7 +17,7 @@ function Hero({ heroTexts, role, resume }: Props) {
     loop: true,
     delaySpeed: 2000,
   });
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
@@ -77,7 +75,7 @@ function Hero({ heroTexts, role, resume }: Props) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full max-w-2xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-dracula-darker shadow-xl rounded-2xl">
+              <div className="inline-block w-full max-w-2xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl bg-dracula-darker rounded-2xl">
                 <Dialog.Title
                   as="h3"
                   className="text-lg font-medium leading-6 text-dracula-light-50"
@@ -103,7 +101,7 @@ function Hero({ heroTexts, role, resume }: Props) {
                   </div>
                 </div>
 
-                <div className="mt-4 flex justify-end">
+                <div className="flex justify-end mt-4">
                   <button
                     type="button"
                     className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-gray-600 border border-transparent rounded-md hover:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500"
@@ -112,7 +110,7 @@ function Hero({ heroTexts, role, resume }: Props) {
                     Close
                   </button>
                   <button
-                    className="ml-4 inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-gray-600 border border-transparent rounded-md hover:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500"
+                    className="inline-flex justify-center px-4 py-2 ml-4 text-sm font-medium text-white bg-gray-600 border border-transparent rounded-md hover:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500"
                     // href={resume}
                     // download="resume.pdf"
                     onClick={downloadResume}
@@ -126,7 +124,7 @@ function Hero({ heroTexts, role, resume }: Props) {
         </Dialog>
       </Transition.Root>
 
-      <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+      <div className="flex flex-col items-center justify-center h-screen space-y-8 overflow-hidden text-center">
         <BackgroundCircles />
         <AnimatedLogo />
 
@@ -134,29 +132,35 @@ function Hero({ heroTexts, role, resume }: Props) {
           <h2 className="text-sm uppercase text-gray-500 placeholder:pb-2 tracking-[15px] mx-5">
             {role}
           </h2>
-          <h1 className="text-4xl lg:text-6xl font-semibold px-10">
+          <h1 className="px-10 text-4xl font-semibold lg:text-6xl">
             <span className="mr-3">{text}</span>
             <Cursor cursorColor="#ff79c6" />
           </h1>
-          <div className="pt-5 flex justify-center items-center space-x-2 flex-wrap gap-5">
+          {/* Make the buttons don't overlap in small screen sizes */}
+
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-5">
             <Link href="#about" scroll={false}>
               <button className="heroButton">About</button>
             </Link>
             <Link href="#skills">
               <button className="heroButton">Skills</button>
             </Link>
+            <Link href="#projects">
+              <button className="heroButton">Projects</button>
+            </Link>
 
             <button className="heroButton" onClick={openModal}>
               Resume
             </button>
+            {/* <button className="heroButton" onClick={openModal}>
+              Experience
+            </button> */}
 
             {/* <Link href="#experience">
             <button className="heroButton">Experience</button>
           </Link>
           
-          <Link href="#projects">
-            <button className="heroButton">Projects</button>
-          </Link> */}
+         */}
           </div>
         </div>
       </div>

@@ -4,7 +4,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
+      <body
+        className={
+          process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+        }
+      >
         <Main />
         <NextScript />
       </body>

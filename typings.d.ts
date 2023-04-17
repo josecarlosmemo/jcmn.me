@@ -3,7 +3,7 @@ export type Social = {
     link: string;
 };
 
-export type PageInfo = {
+export type GeneralData = {
   name: string;
   role: string;
   heroImage: string;
@@ -15,3 +15,21 @@ export type PageInfo = {
   resume: string;
   heroTexts: string[];
 };
+
+export type Skill = {
+  title: string;
+  icon: string;
+};
+
+export type Project = {
+  title: string;
+  description: string;
+  image: string;
+  technologies: Skill[];
+  githubLink?: string;
+  demoLink?: string;
+  isFeatured: boolean;
+};
+
+
+

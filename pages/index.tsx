@@ -1,84 +1,39 @@
-import Head from "next/head";
-// import Image from "next/image";
-// import { Inter } from "@next/font/google";
-// import styles from "@/styles/Home.module.css";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import getPageData, { PageData } from "@/helpers/getData";
 import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-// import WorkExperience from "@/components/sections/WorkExperience";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import Skills from "@/components/sections/Skills";
-// import Projects from "@/components/sections/Projects";
-// import ContactMe from "@/components/sections/ContactMe";
-// import Link from "next/link";
-// import AnimatedLogo from "@/components/AnimatedLogo";
-import getSocials from "@/helpers/getSocials";
-import { Social, PageInfo } from "@/typings";
-import getPageInfo from "@/helpers/getPageInfo";
+import ChevronDownIcon from "@/components/icons/ChevronDownIcon";
 
-// const inter = Inter({ subsets: ["latin"] });
+export default function Home({
+  socials,
+  pageInfo,
+  skills,
+  projects,
+  featuredProjects,
+}: PageData) {
+  const { ref: footerRef, inView: hasFullyScrolled } = useInView();
 
-type Props = {
-  socials: Social[];
-  pageInfo: PageInfo;
-};
+  // TODO: Section Indicator
+  //TODO: If horizontal scrollable container switch scroll to horizontal
+  // TODO: Maybe Animate Title and Subtitles
 
-export default function Home({ socials, pageInfo }: Props) {
   return (
     <>
-      <Head>
-        <title>JCMN | José Carlos Martínez Núñez</title>
-        <meta
-          name="description"
-          content="This is my personal Portfolio Site."
-        />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+      <Header socials={socials} email={pageInfo.email} />
 
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/assets/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/assets/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/assets/favicon/favicon-16x16.png"
-        />
-        <link
-          rel="mask-icon"
-          href="/assets/favicon/safari-pinned-tab.svg"
-          color="#282a36"
-        />
-        <meta name="msapplication-TileColor" content="#603cba" />
-        <meta name="theme-color" content="#282a36" />
-        <meta name="theme-color" content="#000000" />
-
-        <link rel="manifest" href="/manifest.json" />
-      </Head>
-      <div className="bg-dracula-darker text-dracula-light-50 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0  scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-dracula-pink/80 scroll-smooth">
-        <Header socials={socials} email={pageInfo.email} />
-
-        {/* TODO: Readable text, max chars per para */}
-        {/* TODO: Make it english and spanish */}
-
-        <section id="hero" className="snap-start">
+      <main>
+        <section id="hero" className="snap-start snap-always">
           <Hero
             heroTexts={pageInfo.heroTexts}
             role={pageInfo.role}
             resume={pageInfo.resume}
           />
         </section>
-
-        <section id="about" className="snap-center">
+        <section id="about" className="snap-start">
           <About
             aboutText={pageInfo.about}
             imageUrl={pageInfo.profilePicture}
@@ -86,36 +41,50 @@ export default function Home({ socials, pageInfo }: Props) {
         </section>
 
         <section id="skills" className="snap-start">
-          <Skills />
+          <Skills skills={skills} />
         </section>
 
-        <footer className="text-center text-sm text-dracula-light-50 py-5 bg-dracula-darker z-10 snap-start">
-          Built with ❤️ using Next.js, Firebase, TailwindCSS & Framer Motion.
-        </footer>
-
-        {/* <section id="experience" className="snap-center">
-          <WorkExperience />
-        </section>
-       
         <section id="projects" className="snap-start">
-          <Projects />
+          <FeaturedProjects projects={featuredProjects} />
         </section>
-        <section id="contact" className="snap-start">
-          <ContactMe />
-        </section> */}
-      </div>
+      </main>
+
+      <footer
+        ref={footerRef}
+        className="z-10 py-5 text-sm text-center text-dracula-light-50 bg-dracula-darker snap-start snap-always "
+      >
+        Built with ❤️ using Next.js, Firebase, TailwindCSS & Framer Motion.
+      </footer>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 3.5 }}
+      >
+        <ChevronDownIcon
+          className={`fixed bottom-0 left-3 right-0 flex justify-center mb-5 animate-bounce h-10 w-10 text-dracula-darker-50 transition-all duration-500 ease-in-out    ${
+            hasFullyScrolled ? "opacity-0" : "opacity-75"
+          } md:left-1/2 md:transform md:-translate-x-1/2`}
+        />
+      </motion.div>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const socials = await getSocials();
-  const pageInfo = await getPageInfo();
+  // const socials = await getSocials();
+  // const pageInfo = await getPageInfo();
+  // const skills = await getSkills();
+  // const projects = await getProjects();
+  const data = await getPageData();
 
   return {
     props: {
-      socials,
-      pageInfo,
+      ...data,
+      // socials,
+      // pageInfo,
+      // skills,
+      // projects,
     },
     revalidate: 7200,
   };

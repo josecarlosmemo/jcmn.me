@@ -25,7 +25,7 @@ function AnimatedLogo({}: Props) {
     // Drawing SVG
     timeline.add(
       {
-        targets: "path",
+        targets: "path.line-logo",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: 10000,
         direction: "alternate",
@@ -52,14 +52,14 @@ function AnimatedLogo({}: Props) {
   }, []);
 
   return (
-    <div className="relative h-32 w-32 mx-auto">
+    <div className="relative w-32 h-32 mx-auto">
       <Image
         src={"/assets/images/logo-pink.png"}
         alt={"JCMN Solid Logo"}
         width={128}
         height={128}
         ref={solidLogoRef}
-        className="opacity-0 absolute top-auto right-auto bottom-auto z-10 m-auto"
+        className="absolute top-auto bottom-auto right-auto z-10 m-auto opacity-0 unselectable"
         priority
       />
 
