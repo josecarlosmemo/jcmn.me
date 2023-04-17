@@ -29,6 +29,12 @@
   </p>
 </div>
 
+### Demo
+
+<!-- Show demo.gif from assets folder -->
+
+[![Demo](./assets/demo.gif)](https://jcmn.me)
+
 ### Built With
 
 <p align="left">
